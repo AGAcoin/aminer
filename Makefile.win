@@ -1,0 +1,84 @@
+# Project: AMiner
+# Compiler: i686-AROS
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ 6.10.2 on 09/08/15 21:18
+
+CPP       = i386-aros-g++.exe
+CC        = i386-aros-gcc.exe
+WINDRES   = windres.exe
+OBJ       = main.o sha2.o scrypt.o util.o jansson/value.o jansson/dump.o jansson/error.o jansson/hashtable.o jansson/hashtable_seed.o jansson/load.o jansson/memory.o jansson/pack_unpack.o jansson/strbuffer.o jansson/strconv.o jansson/utf.o cpu-miner.o scrypt-x86.o sha2-x86.o
+LINKOBJ   = main.o sha2.o scrypt.o util.o jansson/value.o jansson/dump.o jansson/error.o jansson/hashtable.o jansson/hashtable_seed.o jansson/load.o jansson/memory.o jansson/pack_unpack.o jansson/strbuffer.o jansson/strconv.o jansson/utf.o cpu-miner.o scrypt-x86.o sha2-x86.o
+LIBS      = -L"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/i386-aros/lib" -o AMiner -lamiga -lmui -lthread -lcurl -lz -lssl -lcrypto -lcaf  -s 
+INCS      = -I"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/i386-aros/sys-include"
+CXXINCS   = -I"C:/CrossCompiler/AmiDevCpp/usr/local/amiga/i386-aros/sys-include"
+RCINCS    = --include-dir "C:/CROSSC~1/AMIDEV~1/include"
+BIN       = AMiner.exe
+DEFINES   = 
+CXXFLAGS  = $(CXXINCS) $(DEFINES)   -O2
+CFLAGS    = $(INCS) $(DEFINES)   -O2
+GPROF     = gprof.exe
+RM        = rm -f
+LINK      = i386-aros-g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "AMiner.exe" $(LIBS)
+
+main.o: $(GLOBALDEPS) main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+sha2.o: $(GLOBALDEPS) sha2.c
+	$(CC) -c sha2.c -o sha2.o $(CFLAGS)
+
+scrypt.o: $(GLOBALDEPS) scrypt.c
+	$(CC) -c scrypt.c -o scrypt.o $(CFLAGS)
+
+util.o: $(GLOBALDEPS) util.c
+	$(CC) -c util.c -o util.o $(CFLAGS)
+
+jansson/value.o: $(GLOBALDEPS) jansson/value.c
+	$(CC) -c jansson/value.c -o jansson/value.o $(CFLAGS)
+
+jansson/dump.o: $(GLOBALDEPS) jansson/dump.c
+	$(CC) -c jansson/dump.c -o jansson/dump.o $(CFLAGS)
+
+jansson/error.o: $(GLOBALDEPS) jansson/error.c
+	$(CC) -c jansson/error.c -o jansson/error.o $(CFLAGS)
+
+jansson/hashtable.o: $(GLOBALDEPS) jansson/hashtable.c
+	$(CC) -c jansson/hashtable.c -o jansson/hashtable.o $(CFLAGS)
+
+jansson/hashtable_seed.o: $(GLOBALDEPS) jansson/hashtable_seed.c
+	$(CC) -c jansson/hashtable_seed.c -o jansson/hashtable_seed.o $(CFLAGS)
+
+jansson/load.o: $(GLOBALDEPS) jansson/load.c
+	$(CC) -c jansson/load.c -o jansson/load.o $(CFLAGS)
+
+jansson/memory.o: $(GLOBALDEPS) jansson/memory.c
+	$(CC) -c jansson/memory.c -o jansson/memory.o $(CFLAGS)
+
+jansson/pack_unpack.o: $(GLOBALDEPS) jansson/pack_unpack.c
+	$(CC) -c jansson/pack_unpack.c -o jansson/pack_unpack.o $(CFLAGS)
+
+jansson/strbuffer.o: $(GLOBALDEPS) jansson/strbuffer.c
+	$(CC) -c jansson/strbuffer.c -o jansson/strbuffer.o $(CFLAGS)
+
+jansson/strconv.o: $(GLOBALDEPS) jansson/strconv.c
+	$(CC) -c jansson/strconv.c -o jansson/strconv.o $(CFLAGS)
+
+jansson/utf.o: $(GLOBALDEPS) jansson/utf.c
+	$(CC) -c jansson/utf.c -o jansson/utf.o $(CFLAGS)
+
+cpu-miner.o: $(GLOBALDEPS) cpu-miner.c
+	$(CC) -c cpu-miner.c -o cpu-miner.o $(CFLAGS)
+
+scrypt-x86.o: $(GLOBALDEPS) scrypt-x86.s
+	$(CPP) -c scrypt-x86.s -o scrypt-x86.o $(CXXFLAGS)
+
+sha2-x86.o: $(GLOBALDEPS) sha2-x86.s
+	$(CPP) -c sha2-x86.s -o sha2-x86.o $(CXXFLAGS)

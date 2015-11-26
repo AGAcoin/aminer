@@ -1,0 +1,19 @@
+This is a single-threaded CPU miner for Litecoin and Bitcoin,
+fork of Jeff Garzik's reference cpuminer.
+
+License: GPLv2.  See COPYING for details.
+
+Notes for AROS x86 users:
+	It supports only one core, thus multi-threading is not possible
+	at the moment because of this lack on AROS. Furthermore only
+	stratum mining protocol is supported, so longpoll has been
+	removed: there is an issue between AROS, its bsdsocket
+	library and curl, basically sockets are not shared across
+	threads.
+	
+Notes for AmigaOS 4 and MorphOS users:
+	There is already code that support PowerPC platforms, but
+	I do not have any next-gen PPC Amiga computer at the moment
+	to test AMiner on.
+
+Usage instructions:  see original cpuminer documentation.

@@ -1,0 +1,13 @@
+{
+	"algo": "scrypt",
+	"pass": "yourpassword",
+	"retry-pause": "30",
+	"coinbase-sig": "",
+	"debug": true,
+	"protocol-dump": true,
+	"retries": "-1",
+	"scantime": "5",
+	"timeout": "0",
+	"url": "stratum+tcp://pool:port",
+	"user": "yourusername"
+}
